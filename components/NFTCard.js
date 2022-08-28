@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { View, Image, Text } from "react-native";
-import {useState} from 'react';
+import { useState } from 'react';
 
 import { COLORS, SIZES, SHADOWS, assets, FONTS } from "../constants";
 import { CircleButton, RectButton } from "./Button";
@@ -8,9 +8,9 @@ import { SubInfo, EthPrice, NFTTitle } from './SubInfo'
 
 const NFTCard = ({ data }) => {
     const navigation = useNavigation();
-    const [text, setText] = useState(data.description.slice(0,100));
-    const [readMore, setrReadMore] = useState(false);
-    
+    const [text, setText] = useState(data.description.slice(0, 100));
+    const [readMore, setReadMore] = useState(false);
+
 
     return (
         <View style={{
@@ -76,24 +76,24 @@ const NFTCard = ({ data }) => {
                         fontSize: SIZES.small,
                         fontFamily: FONTS.semiBold,
                         color: COLORS.primary,
-                        width:'100%',
-                        
+                        width: '100%',
+
 
                     }}
-                    onPress={()=>{
-                        if(!readMore){
-                            setText(data.description);
-                            setrReadMore(true);
-                        } else {
-                            setText(data.description.slice(0,100));
-                            setrReadMore(false);
-                        }
-                    }}
+                        onPress={() => {
+                            if (!readMore) {
+                                setText(data.description);
+                                setReadMore(true);
+                            } else {
+                                setText(data.description.slice(0, 100));
+                                setReadMore(false);
+                            }
+                        }}
                     >
-                        {readMore ? ' Show less':'Read More'}
+                        {readMore ? ' Show less' : 'Read More'}
                     </Text>
                 </Text>
-                
+
             </View>
 
         </View>

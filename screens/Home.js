@@ -6,14 +6,14 @@ import { COLORS, NFTData } from "../constants";
 
 const Home = () => {
   const [locdata, setLocdata] = useState(NFTData);
-  
-  const handleSearch = (value)=> {
-    if(!value.length) return setLocdata(NFTData);
 
-    const filteredData=NFTData.filter((item)=>item.name.toLowerCase().includes(value.toLowerCase())
+  const handleSearch = (value) => {
+    if (!value.length) return setLocdata(NFTData);
+
+    const filteredData = NFTData.filter((item) => item.name.toLowerCase().includes(value.toLowerCase())
     );
 
-    if(filteredData.length){
+    if (filteredData.length) {
       setLocdata(filteredData);
     } else {
       setLocdata(NFTData);
@@ -22,7 +22,7 @@ const Home = () => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <FocusedStatusBar backgroundColor={COLORS.primary} />
+      <FocusedStatusBar backgroundColor={COLORS.black} />
       <View style={{ flex: 1 }}>
         <View style={{ zIndex: 0 }}>
           <FlatList
@@ -30,7 +30,7 @@ const Home = () => {
             renderItem={({ item }) => <NFTCard data={item} />}
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
-            ListHeaderComponent={<HomeHeader onSearch={handleSearch}/>}
+            ListHeaderComponent={<HomeHeader onSearch={handleSearch} />}
           />
         </View>
 
@@ -45,7 +45,7 @@ const Home = () => {
           }}
         >
           <View
-            style={{ height: 300, backgroundColor: COLORS.white }} />
+            style={{ height: 20, backgroundColor: "#A90011" }} />
           <View style={{ flex: 1, backgroundColor: COLORS.white }} />
         </View>
       </View>
