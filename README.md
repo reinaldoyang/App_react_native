@@ -29,4 +29,14 @@ Now, we can only use search in our app. So we can add filter to sort which secto
 Features for locals to see other locals to get to know them better and maybe merge their business.
 We are imagining that we can have an app that have access to most of Indonesia's culture, and their creativity product.
 
-Track - Rural Development Dean n Reinaldo
+Made by: Track - Rural Development Dean and Reinaldo
+
+Version:
+
+node - v16.17
+
+npm - 8.3.1
+
+expo - 5.5.1
+
+Build using React Native
